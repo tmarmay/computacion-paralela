@@ -1,31 +1,31 @@
-# tiny_md
+## Computacion paralela
 
-> _tiny molecular dynamics_
+#### Tomas Marmay ~ Famaf 2025
 
-Proyecto inicial para realizar speed-up de un código de Dinámica Molecular con un potencial interatómico de Lennard-Jones. Inicialmente se dan las posiciones en un cristal FCC y velocidades aleatorias distribuidas uniformemente según la temperatura inicial. Las fuerzas se obtienen de un potencial de LJ (12-6) y la evolución temporal viene dada por el algoritmo Velocity Verlet. Se consideran condiciones periódicas de contorno para reproducir un sistema infinito. La temperatura es controlada a través de un reescaleo en las velocidades. Cada cierta cantidad de pasos de dinámica molecular se cambia la densidad del sistema y se reescalean las posiciones para obtener la ecuación de estado. Para más información se puede ver `doc/informe.pdf`.
+### Material teorico
+[OMPUTACION PARALELA 2021 - FAMAF](https://cs.famaf.unc.edu.ar/~nicolasw/Docencia/CP/2021/index.html)
 
+### Comandos utiles
+- `perf top :` puedo ver las funciones de los programas que corre el cpu
+- `perf stat <program> :` estadisticas de la corrida del programa
+- `btop :` mejora de htop
+- `getconf <cache> :` me dice de a cuanto me trae (tamano de memoria) un pedido en la cache
+- `ldd <file> :` muestra las librerias linkeadas
+- `dd :` COMPLETAR
+- ``
 
-### Requisitos
+### Opciones de compilacion 
+- `-m32 :` compila para 32bits
+- `-Oi :` con i en {0,1,2,3} niveles de optimizacion
+- `-march=native :` optimiza para el la arquitectura del procesador que esta compilando 
+- `-save-temps :`
+- `-std=<version> :` especificar a que estandar de c compilar
+- `-S :` genera el assembler
 
-Para compilar es necesario tener instalado `gcc` y `OpenGL`.
+static en struct 
+### Recordatorios
+- `4byes :` 32bits
+- `8byes :` 64bits
 
-
-### Compilación
-
-Para compilar se utiliza `Makefile`:
-```bash
-make clean
-make
-```
-donde `make clean` elimina los objetos compilados anteriormente y `make` compila dos ejecutables: `tiny_md` y `viz`, ambos realizan la misma simulación pero el segundo posee una visualización en tiempo real.
-
-> Nota:
->
-> _Si se desean cambiar parámetros de entrada de la simulación, puede modificarse el archivo _`parameters.h`_ o pasar los valores deseados como parámetros al preprocesador C; por ejemplo, _`make CPPFLAGS="-DN=1372"`_ cambia la cantidad de partículas que se simulan._
-
-
-### Contacto
-
-Por errores, preguntas o sugerencias contactarse con:
-
-+ Francisco Fernandez (<fernandezfrancisco2195@gmail.com>)
+### Herramientas utiles
+- [Compiler explorer](https://godbolt.org/) para compilar funciones por internet y debugear
