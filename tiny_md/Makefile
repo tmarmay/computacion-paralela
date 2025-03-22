@@ -1,7 +1,8 @@
 N	= 256
 CC      = gcc
-CFLAGS	= -O0
-WFLAGS	= -std=c11 -Wall -Wextra -g -lglut -DN=$(N)
+CFLAGS	= -O2
+#WFLAGS	= -march=native -save-temps -std=c11 -s -Wall -Wextra -g -lglut -funsafe-math-optimizations -DN=$(N)
+WFLAGS = -march=native -mtune=native -O2 -DN=$(N) -funsafe-math-optimizations
 LDFLAGS	= -lm
 
 TARGETS	= tiny_md viz
