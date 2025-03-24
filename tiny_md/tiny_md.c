@@ -7,6 +7,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+static double rxyz[3 * N];
+static double vxyz[3 * N];
+static double fxyz[3 * N];
 
 int main()
 {
@@ -15,11 +18,11 @@ int main()
     file_thermo = fopen("thermo.log", "w");
     double Ekin, Epot, Temp, Pres; // variables macroscopicas
     double Rho, cell_V, cell_L, tail, Etail, Ptail;
-    double *rxyz, *vxyz, *fxyz; // variables microscopicas
+    //double *rxyz, *vxyz, *fxyz; // variables microscopicas
 
-    rxyz = (double*)malloc(3 * N * sizeof(double));
-    vxyz = (double*)malloc(3 * N * sizeof(double));
-    fxyz = (double*)malloc(3 * N * sizeof(double));
+    // rxyz = (double*)malloc(3 * N * sizeof(double));
+    // vxyz = (double*)malloc(3 * N * sizeof(double));
+    // fxyz = (double*)malloc(3 * N * sizeof(double));
 
     printf("# Número de partículas:      %d\n", N);
     printf("# Temperatura de referencia: %.2f\n", T0);
@@ -104,8 +107,8 @@ int main()
     fclose(file_xyz);
 
     // Liberacion de memoria
-    free(rxyz);
-    free(fxyz);
-    free(vxyz);
+    // free(rxyz);
+    // free(fxyz);
+    // free(vxyz);
     return 0;
 }

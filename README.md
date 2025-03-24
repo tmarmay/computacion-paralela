@@ -8,7 +8,7 @@
 ### Comandos utiles
 - `perf top :` puedo ver las funciones de los programas que corre el cpu
     - `perf top -p <PID> :` filtra solo por el pid de mi programa
-    - `perf top -F100 -d10 -p$(pgrep -d, a.out) :` un poco mas amigable, no refresca tan rapido para poder leer y filtrar por programa
+    - `perf top -F100 -d10 -p$(pgrep -d, tiny_md) :` un poco mas amigable, no refresca tan rapido para poder leer y filtrar por programa
 - `perf stat <program> :` estadisticas de la corrida del programa
 - `btop :` mejora de htop
 - `getconf <cache> :` me dice de a cuanto me trae (tamano de memoria) un pedido en la cache

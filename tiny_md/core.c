@@ -122,23 +122,24 @@ void forces(const double* rxyz, double* fxyz, double* epot, double* pres,
 
             double rij2 = rx * rx + ry * ry + rz * rz;
 
-            if (rij2 <= rcut2) {
-                double r2inv = 1.0 / rij2;
-                double r6inv = r2inv * r2inv * r2inv;
+            if (rij2 > rcut2)
+                continue;
 
-                double fr = 24.0 * r2inv * r6inv * (2.0 * r6inv - 1.0);
+            double r2inv = 1.0 / rij2;
+            double r6inv = r2inv * r2inv * r2inv;
 
-                fxyz[i + 0] += fr * rx;
-                fxyz[i + 1] += fr * ry;
-                fxyz[i + 2] += fr * rz;
+            double fr = 24.0 * r2inv * r6inv * (2.0 * r6inv - 1.0);
 
-                fxyz[j + 0] -= fr * rx;
-                fxyz[j + 1] -= fr * ry;
-                fxyz[j + 2] -= fr * rz;
+            fxyz[i + 0] += fr * rx;
+            fxyz[i + 1] += fr * ry;
+            fxyz[i + 2] += fr * rz;
 
-                *epot += 4.0 * r6inv * (r6inv - 1.0) - ECUT;
-                pres_vir += fr * rij2;
-            }
+            fxyz[j + 0] -= fr * rx;
+            fxyz[j + 1] -= fr * ry;
+            fxyz[j + 2] -= fr * rz;
+
+            *epot += 4.0 * r6inv * (r6inv - 1.0) - ECUT;
+            pres_vir += fr * rij2;
         }
     }
     pres_vir /= (V * 3.0);
