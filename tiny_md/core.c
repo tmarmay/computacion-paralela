@@ -88,20 +88,22 @@ static double minimum_image(double cordi, const double cell_length)
 }
 
 
-void forces(const double* rxyz, double* fxyz, double* epot, double* pres,
+void forces(const double* restrict rxyz, double* fxyz, double* epot, double* pres,
             const double* temp, const double rho, const double V, const double L)
 {
+    
     // calcula las fuerzas LJ (12-6)
-
     for (int i = 0; i < 3 * N; i++) {
         fxyz[i] = 0.0;
     }
     double pres_vir = 0.0;
     double rcut2 = RCUT * RCUT;
     *epot = 0.0;
-
+    
     for (int i = 0; i < 3 * (N - 1); i += 3) {
-
+        __builtin_prefetch(&rxyz[i + 24], 0, 3);
+        __builtin_prefetch(&fxyz[i + 24], 1, 3);
+        
         double xi = rxyz[i + 0];
         double yi = rxyz[i + 1];
         double zi = rxyz[i + 2];
