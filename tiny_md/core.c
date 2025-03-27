@@ -135,7 +135,7 @@ void forces(const double* restrict rxyz, double* fxyz, double* epot, double* pre
 
             __m256d r_xyz = _mm256_sub_pd(xyz_i, xyz_j);
             
-            r_xyz = minimum_image2(r_xyz, L256);
+            r_xyz = minimum_image(r_xyz, L256);
 
             double rx = r_xyz[0];  
             double ry = r_xyz[1];  
