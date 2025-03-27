@@ -3,6 +3,7 @@
 
 #include <math.h>
 #include <stdlib.h> // rand()
+#include <immintrin.h> // AVX
 
 #define ECUT (4.0 * (pow(RCUT, -12) - pow(RCUT, -6)))
 
@@ -74,56 +75,75 @@ void init_vel(double* vxyz, double* temp, double* ekin)
     }
 }
 
+// Funcion optmizada que genero mas impacto en el rendimiento
+// static double minimum_image(double cordi, const double cell_length)
+// {
+//     // imagen más cercana
+//     if (cordi <= -0.5 * cell_length) {
+//         cordi += cell_length;
+//     } else if (cordi > 0.5 * cell_length) {
+//         cordi -= cell_length;
+//     }
+//     return cordi;
+// }
 
-static double minimum_image(double cordi, const double cell_length)
+static __m256d minimum_image(__m256d v_cordi, const __m256d cell_length)
 {
-    // imagen más cercana
+    // Eqivalente 0.5 * cell_length)
+    __m256d v_half_cell_length = _mm256_mul_pd(cell_length, _mm256_set1_pd(0.5));
 
-    if (cordi <= -0.5 * cell_length) {
-        cordi += cell_length;
-    } else if (cordi > 0.5 * cell_length) {
-        cordi -= cell_length;
-    }
-    return cordi;
+    // Máscara para `cordi <= -0.5 * cell_length`
+    __m256d mask1 = _mm256_cmp_pd(v_cordi, _mm256_sub_pd(_mm256_setzero_pd(), v_half_cell_length), _CMP_LE_OQ);
+
+    // Máscara para `cordi > 0.5 * cell_length`
+    __m256d mask2 = _mm256_cmp_pd(v_cordi, v_half_cell_length, _CMP_GT_OQ);\
+
+    // Sumar cell_length donde `mask1` es verdadera
+    __m256d result1 = _mm256_add_pd(v_cordi, cell_length);
+    __m256d result_cordi = _mm256_blendv_pd(v_cordi, result1, mask1);
+
+    // Restar cell_length donde `mask2` es verdadera
+    __m256d result2 = _mm256_sub_pd(result_cordi, cell_length);
+    result_cordi = _mm256_blendv_pd(result_cordi, result2, mask2);
+
+    return result_cordi;
 }
-
 
 void forces(const double* restrict rxyz, double* fxyz, double* epot, double* pres,
             const double* temp, const double rho, const double V, const double L)
 {
-    
+    // Cargar L en un registro de 256
+    __m256d L256 = _mm256_set1_pd(L);
+
     // calcula las fuerzas LJ (12-6)
     for (int i = 0; i < 3 * N; i++) {
         fxyz[i] = 0.0;
-    }
+    } // En O2 se hace memeset
+
     double pres_vir = 0.0;
     double rcut2 = RCUT * RCUT;
     *epot = 0.0;
     
     for (int i = 0; i < 3 * (N - 1); i += 3) {
-        __builtin_prefetch(&rxyz[i + 24], 0, 3);
-        __builtin_prefetch(&fxyz[i + 24], 1, 3);
         
-        double xi = rxyz[i + 0];
-        double yi = rxyz[i + 1];
-        double zi = rxyz[i + 2];
+        //Trae 4 numeros y solo usamos 3 por como estaba contruida las iteraciones
+        __m256d xyz_i = _mm256_loadu_pd(&rxyz[i]);
 
         for (int j = i + 3; j < 3 * N; j += 3) {
 
-            double xj = rxyz[j + 0];
-            double yj = rxyz[j + 1];
-            double zj = rxyz[j + 2];
+            __m256d xyz_j = _mm256_loadu_pd(&rxyz[j]);
 
-            // distancia mínima entre r_i y r_j
-            double rx = xi - xj;
-            rx = minimum_image(rx, L);
-            double ry = yi - yj;
-            ry = minimum_image(ry, L);
-            double rz = zi - zj;
-            rz = minimum_image(rz, L);
+            __m256d r_xyz = _mm256_sub_pd(xyz_i, xyz_j);
+            
+            r_xyz = minimum_image2(r_xyz, L256);
+
+            double rx = r_xyz[0];  
+            double ry = r_xyz[1];  
+            double rz = r_xyz[2];
 
             double rij2 = rx * rx + ry * ry + rz * rz;
 
+            // Minimiza levemente los branch misses
             if (rij2 > rcut2)
                 continue;
 
