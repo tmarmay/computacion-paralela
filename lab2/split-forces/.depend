@@ -1,0 +1,3 @@
+core.o: core.c core.h parameters.h
+tiny_md.o: tiny_md.c core.h parameters.h wtime.h
+wtime.o: wtime.c wtime.h
