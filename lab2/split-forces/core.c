@@ -213,7 +213,7 @@ void velocity_verlet(double* rxyz, double* vxyz, double* fxyz, double* epot,
     for (int i = 0; i < 3 * N; i += 3) {
         __m256d vxyz_m = _mm256_loadu_pd(&vxyz[i]);
         __m256d fxyz_m = _mm256_loadu_pd(&fxyz[i]);
-        __m256d rxyz_m = _mm256_loadu_pd(&fxyz[i]);
+        __m256d rxyz_m = _mm256_loadu_pd(&rxyz[i]);
 
         __m256d result = _mm256_add_pd(_mm256_mul_pd(vxyz_m, dt_m1), _mm256_mul_pd(fxyz_m, dt_m2));
         rxyz_m = _mm256_add_pd(rxyz_m, result);
