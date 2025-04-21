@@ -19,3 +19,7 @@ La base de este laboratorio es [Lab1](../lab1/). En este laboratorio se intento 
 En esta optimizacion si hubo una mejora pero solo para los valores de $N$ bajos, ya que para valores mas grandes el programa obligadamente debe ir a RAM, ademas dicho uso de funciones generan mas instrucciones, por lo que para $N$ mayores es peor que la version anterior
 
 - La tercer opcion esta contruida sobre la segunda version y se puede encontrar en la carpeta [split forces](split-forces/). Esta idea se base en dividir **forces** en dos funciones. Para que en la primer funcion poder sacar lo mejor de AVX haciendo pre-calculos, para que en la segunda funcion evirar el uso AVX dado que no es conveniente por la estructura del codigo y las depedencias de datos. Esto tuvo un peor rendimiento por todas las instrucciones extras que se necesitan para que esto funcione. Sin contar la memoria adicional que hace falta usar para almacenar los pre-calculos.
+
+![flops](n-flops.png)
+
+![tiempo](n-tiempo.png)
