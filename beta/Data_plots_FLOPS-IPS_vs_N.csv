@@ -1,0 +1,5 @@
+"Number of runs","m","N","FLOPS/IPS (gcc)","FLOPS/IPS (clang)","Time elapsed (gcc)","Time elapsed (clang)"
+1,4,256,.6415261,,2.656756851,
+1,7,1372,.6624356,,41.582827274,
+1,4,256,0,,0,
+1,4,256,.6770815,,2.035585301,
