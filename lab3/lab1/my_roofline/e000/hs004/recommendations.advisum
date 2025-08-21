@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- <!DOCTYPE IntelParallelAdvisorSummaryCollection SYSTEM  "IntelParallelAdvisorSummaryCollection.dtd"> -->
+
+<IntelParallelAdvisorSummary version="" 
+                             kind="DATAKIND_SURVEY_EX" >
+  <hotspot filename="/users/cp2025/cp2025_093/lab3/lab1/core.c"
+           line_no="136"
+           routine="forces._omp_fn.0"
+           is_vectorized="1"
+           self_time="1.832138E+00"
+           total_time="0.000000E+00"
+           trip_counts=""
+           func_instance="15"
+           priority="0">
+           <recommendation id="rec_div_c" title="Enable the use of approximate division instructions" confidence="1" gain="-1"/>
+  </hotspot>
+  <hotspot filename="/users/cp2025/cp2025_093/lab3/lab1/tiny_md.c"
+           line_no="45"
+           routine="main"
+           is_vectorized="0"
+           self_time="0.000000E+00"
+           total_time="0.000000E+00"
+           trip_counts=""
+           func_instance="8"
+           priority="0">
+           <recommendation id="rec_type_conversions_smallest_c" title="Use the smallest data type" confidence="1" gain="-1"/>
+  </hotspot>
+</IntelParallelAdvisorSummary >

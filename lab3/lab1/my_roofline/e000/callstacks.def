@@ -1,0 +1,410 @@
+# callstacks file version: 8
+#    rowid	    parent	       rva	 loop	 system	                                function	binary	instance_start_rva	instance_size	instance_end_rva	finst_rowid	roi	is_inlined	jit_method_id	tripcounts_roi	flops_roi	cachesim_roi	data_transfer_roi	projection_roi
+         1	        -1	      6256	    0	      0	                                  _start	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6256	34	0	7	0	0	0	0	0	0	0	0
+         2	        -1	      6288	    0	      0	                                  _start	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6256	34	0	7	0	0	0	0	0	0	0	0
+         3	       205	    171556	    1	      1	[Loop at line 347 in __libc_start_main_impl]	/lib/x86_64-linux-gnu/libc.so.6	171526,171656	126,62	0	42	0	0	0	0	0	0	0	0
+         4	         3	    171367	    0	      1	                  __libc_start_call_main	/lib/x86_64-linux-gnu/libc.so.6	171248	172	0	44	0	0	0	0	0	0	0	0
+         5	       235	      5102	    1	      0	               [Loop at line 45 in main]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	4904,6178	1103,66	6007	8	0	0	0	0	0	0	0	0
+         6	         5	      8166	    0	      0	                                  forces	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	8000	218	0	10	0	0	0	0	0	0	0	0
+         7	         6	     96352	    0	      1	                           GOMP_parallel	/lib/x86_64-linux-gnu/libgomp.so.1	96288	143	0	2	0	0	0	0	0	0	0	0
+         8	       325	    136966	    1	      1	          [Loop@0x21628 in func@0x21314]	/lib/x86_64-linux-gnu/libgomp.so.1	136744,138120,138200,138896,139064,139789	398,77,30,46,74,78	0	3	0	0	0	0	0	0	0	0
+         9	         7	    138262	    0	      1	                            func@0x21314	/lib/x86_64-linux-gnu/libgomp.so.1	135956	5916	0	4	0	0	0	0	0	0	0	0
+        10	       328	    147046	    1	      1	          [Loop@0x23e60 in func@0x23e24]	/lib/x86_64-linux-gnu/libgomp.so.1	147040	17	0	22	0	0	0	0	0	0	0	0
+        11	       237	      5197	    1	      0	               [Loop at line 63 in main]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	5125,6178	186,26	5311	11	0	0	0	0	0	0	0	0
+        12	        11	      8583	    0	      0	                         velocity_verlet	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	8224	509	0	12	0	0	0	0	0	0	0	0
+        13	        12	      8166	    0	      0	                                  forces	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	8000	218	0	10	0	0	0	0	0	0	0	0
+        14	        13	     96352	    0	      1	                           GOMP_parallel	/lib/x86_64-linux-gnu/libgomp.so.1	96288	143	0	2	0	0	0	0	0	0	0	0
+        15	        14	    138262	    0	      1	                            func@0x21314	/lib/x86_64-linux-gnu/libgomp.so.1	135956	5916	0	4	0	0	0	0	0	0	0	0
+        16	       331	    147042	    1	      1	          [Loop@0x23e60 in func@0x23e24]	/lib/x86_64-linux-gnu/libgomp.so.1	147040	17	0	22	0	0	0	0	0	0	0	0
+        17	        13	    141916	    0	      1	                            func@0x22a34	/lib/x86_64-linux-gnu/libgomp.so.1	141876	416	0	25	0	0	0	0	0	0	0	0
+        18	       334	    147494	    1	      1	          [Loop@0x24020 in func@0x23fc4]	/lib/x86_64-linux-gnu/libgomp.so.1	147488	18	0	26	0	0	0	0	0	0	0	0
+        19	       331	    147053	    1	      1	          [Loop@0x23e60 in func@0x23e24]	/lib/x86_64-linux-gnu/libgomp.so.1	147040	17	0	22	0	0	0	0	0	0	0	0
+        20	       331	    147046	    1	      1	          [Loop@0x23e60 in func@0x23e24]	/lib/x86_64-linux-gnu/libgomp.so.1	147040	17	0	22	0	0	0	0	0	0	0	0
+        21	       331	    147055	    1	      1	          [Loop@0x23e60 in func@0x23e24]	/lib/x86_64-linux-gnu/libgomp.so.1	147040	17	0	22	0	0	0	0	0	0	0	0
+        22	       334	    147490	    1	      1	          [Loop@0x24020 in func@0x23fc4]	/lib/x86_64-linux-gnu/libgomp.so.1	147488	18	0	26	0	0	0	0	0	0	0	0
+        23	       331	    147049	    1	      1	          [Loop@0x23e60 in func@0x23e24]	/lib/x86_64-linux-gnu/libgomp.so.1	147040	17	0	22	0	0	0	0	0	0	0	0
+        24	       334	    147502	    1	      1	          [Loop@0x24020 in func@0x23fc4]	/lib/x86_64-linux-gnu/libgomp.so.1	147488	18	0	26	0	0	0	0	0	0	0	0
+        25	       334	    147497	    1	      1	          [Loop@0x24020 in func@0x23fc4]	/lib/x86_64-linux-gnu/libgomp.so.1	147488	18	0	26	0	0	0	0	0	0	0	0
+        26	       239	      5440	    1	      0	               [Loop at line 75 in main]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	5357,5787,6204	232,220,40	5589	13	0	0	0	0	0	0	0	0
+        27	        26	      8583	    0	      0	                         velocity_verlet	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	8224	509	0	12	0	0	0	0	0	0	0	0
+        28	        27	      8166	    0	      0	                                  forces	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	8000	218	0	10	0	0	0	0	0	0	0	0
+        29	        28	    141916	    0	      1	                            func@0x22a34	/lib/x86_64-linux-gnu/libgomp.so.1	141876	416	0	25	0	0	0	0	0	0	0	0
+        30	       344	    147494	    1	      1	          [Loop@0x24020 in func@0x23fc4]	/lib/x86_64-linux-gnu/libgomp.so.1	147488	18	0	26	0	0	0	0	0	0	0	0
+        31	       344	    147502	    1	      1	          [Loop@0x24020 in func@0x23fc4]	/lib/x86_64-linux-gnu/libgomp.so.1	147488	18	0	26	0	0	0	0	0	0	0	0
+        32	        28	     96352	    0	      1	                           GOMP_parallel	/lib/x86_64-linux-gnu/libgomp.so.1	96288	143	0	2	0	0	0	0	0	0	0	0
+        33	        32	    138262	    0	      1	                            func@0x21314	/lib/x86_64-linux-gnu/libgomp.so.1	135956	5916	0	4	0	0	0	0	0	0	0	0
+        34	       348	    147046	    1	      1	          [Loop@0x23e60 in func@0x23e24]	/lib/x86_64-linux-gnu/libgomp.so.1	147040	17	0	22	0	0	0	0	0	0	0	0
+        35	       348	    147042	    1	      1	          [Loop@0x23e60 in func@0x23e24]	/lib/x86_64-linux-gnu/libgomp.so.1	147040	17	0	22	0	0	0	0	0	0	0	0
+        36	       344	    147490	    1	      1	          [Loop@0x24020 in func@0x23fc4]	/lib/x86_64-linux-gnu/libgomp.so.1	147488	18	0	26	0	0	0	0	0	0	0	0
+        37	       344	    147497	    1	      1	          [Loop@0x24020 in func@0x23fc4]	/lib/x86_64-linux-gnu/libgomp.so.1	147488	18	0	26	0	0	0	0	0	0	0	0
+        38	       344	    147504	    1	      1	          [Loop@0x24020 in func@0x23fc4]	/lib/x86_64-linux-gnu/libgomp.so.1	147488	18	0	26	0	0	0	0	0	0	0	0
+        39	        28	     96357	    0	      1	                           GOMP_parallel	/lib/x86_64-linux-gnu/libgomp.so.1	96288	143	0	2	0	0	0	0	0	0	0	0
+        40	        39	      7063	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+        41	       355	    145190	    1	      1	          [Loop@0x23720 in func@0x236e4]	/lib/x86_64-linux-gnu/libgomp.so.1	145184	18	0	29	0	0	0	0	0	0	0	0
+        42	       355	    145186	    1	      1	          [Loop@0x23720 in func@0x236e4]	/lib/x86_64-linux-gnu/libgomp.so.1	145184	18	0	29	0	0	0	0	0	0	0	0
+        43	       242	      7000	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+        44	       244	      8614	    1	      0	   [Loop at line 211 in velocity_verlet]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	8608	91	8699	17	0	0	0	0	0	0	0	0
+        45	       242	      6822	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+        46	       242	      6901	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+        47	       248	      8412	    1	      0	   [Loop at line 194 in velocity_verlet]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	8304	259	8563	18	0	0	0	0	0	0	0	0
+        48	       250	      5989	    1	      0	               [Loop at line 94 in main]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	5952	43	5995	19	0	0	0	0	0	0	0	0
+        49	        48	    361893	    0	      1	                               __fprintf	/lib/x86_64-linux-gnu/libc.so.6	361744	179	0	45	0	0	0	0	0	0	0	0
+        50	        49	    410980	    0	      1	                     __vfprintf_internal	/lib/x86_64-linux-gnu/libc.so.6	410832	640	0	46	0	0	0	0	0	0	0	0
+        51	       207	    406716	    0	      1	                        __printf_fp_spec	/lib/x86_64-linux-gnu/libc.so.6	0,401566,401581,401588,401608,406712	0,7,0,16,24,5	0	47	0	1	0	0	0	0	0	0
+        52	        51	    376931	    0	      1	                    __printf_fp_l_buffer	/lib/x86_64-linux-gnu/libc.so.6	376480	462	0	49	0	0	0	0	0	0	0	0
+        53	       210	    369894	    1	      1	[Loop at line 790 in __printf_fp_buffer_1]	/lib/x86_64-linux-gnu/libc.so.6	369875	51	0	50	0	0	0	0	0	0	0	0
+        54	        53	    367622	    0	      1	                              hack_digit	/lib/x86_64-linux-gnu/libc.so.6	367360	324	0	53	0	0	0	0	0	0	0	0
+        55	        48	         0	    0	      0	                [Unknown stack frame(s)]	n/a	0	0	0	1	0	0	0	0	0	0	0	0
+        56	        55	      8166	    0	      0	                                  forces	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	8000	218	0	10	0	0	0	0	0	0	0	0
+        57	        56	    141916	    0	      1	                            func@0x22a34	/lib/x86_64-linux-gnu/libgomp.so.1	141876	416	0	25	0	0	0	0	0	0	0	0
+        58	       359	    147504	    1	      1	          [Loop@0x24020 in func@0x23fc4]	/lib/x86_64-linux-gnu/libgomp.so.1	147488	18	0	26	0	0	0	0	0	0	0	0
+        59	        13	     96357	    0	      1	                           GOMP_parallel	/lib/x86_64-linux-gnu/libgomp.so.1	96288	143	0	2	0	0	0	0	0	0	0	0
+        60	       253	      6793	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+        61	       210	    369906	    1	      1	[Loop at line 790 in __printf_fp_buffer_1]	/lib/x86_64-linux-gnu/libc.so.6	369875	51	0	50	0	0	0	0	0	0	0	0
+        62	        56	     96352	    0	      1	                           GOMP_parallel	/lib/x86_64-linux-gnu/libgomp.so.1	96288	143	0	2	0	0	0	0	0	0	0	0
+        63	        62	    138262	    0	      1	                            func@0x21314	/lib/x86_64-linux-gnu/libgomp.so.1	135956	5916	0	4	0	0	0	0	0	0	0	0
+        64	       362	    147046	    1	      1	          [Loop@0x23e60 in func@0x23e24]	/lib/x86_64-linux-gnu/libgomp.so.1	147040	17	0	22	0	0	0	0	0	0	0	0
+        65	       359	    147494	    1	      1	          [Loop@0x24020 in func@0x23fc4]	/lib/x86_64-linux-gnu/libgomp.so.1	147488	18	0	26	0	0	0	0	0	0	0	0
+        66	       359	    147490	    1	      1	          [Loop@0x24020 in func@0x23fc4]	/lib/x86_64-linux-gnu/libgomp.so.1	147488	18	0	26	0	0	0	0	0	0	0	0
+        67	       359	    147497	    1	      1	          [Loop@0x24020 in func@0x23fc4]	/lib/x86_64-linux-gnu/libgomp.so.1	147488	18	0	26	0	0	0	0	0	0	0	0
+        68	       213	    401653	    0	      1	                           __find_specmb	/lib/x86_64-linux-gnu/libc.so.6	401636,401646,401663	5,8,3	0	54	0	1	0	0	0	0	0	0
+        69	        68	   1470773	    0	      1	                        __strchrnul_avx2	/lib/x86_64-linux-gnu/libc.so.6	1470720	484	0	55	0	0	0	0	0	0	0	0
+        70	        56	     96357	    0	      1	                           GOMP_parallel	/lib/x86_64-linux-gnu/libgomp.so.1	96288	143	0	2	0	0	0	0	0	0	0	0
+        71	       256	      6911	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+        72	       256	      6782	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+        73	       256	      6936	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+        74	       256	      6852	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+        75	       362	    147053	    1	      1	          [Loop@0x23e60 in func@0x23e24]	/lib/x86_64-linux-gnu/libgomp.so.1	147040	17	0	22	0	0	0	0	0	0	0	0
+        76	        59	      6600	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+        77	        76	   1464297	    0	      1	            __memset_avx2_unaligned_erms	/lib/x86_64-linux-gnu/libc.so.6	1464128	390	0	56	0	0	0	0	0	0	0	0
+        78	       253	      6847	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+        79	        51	    376604	    0	      1	                    __printf_fp_l_buffer	/lib/x86_64-linux-gnu/libc.so.6	376480	462	0	49	0	0	0	0	0	0	0	0
+        80	        79	   1473181	    0	      1	                           __strlen_avx2	/lib/x86_64-linux-gnu/libc.so.6	1473152	370	0	57	0	0	0	0	0	0	0	0
+        81	        55	      8078	    0	      0	                                  forces	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	8000	218	0	10	0	0	0	0	0	0	0	0
+        82	       215	   1464260	    1	      1	[Loop at line 291 in __memset_avx2_unaligned_erms]	/lib/x86_64-linux-gnu/libc.so.6	1464256	28	0	58	0	0	0	0	0	0	0	0
+        83	       370	    137723	    1	      1	          [Loop@0x21910 in func@0x21314]	/lib/x86_64-linux-gnu/libgomp.so.1	137488,138384,138816,138944,139008,139197,139680,140080,140485,141024,141300	473,427,74,43,52,44,78,67,263,12,39	0	32	0	0	0	0	0	0	0	0
+        84	       242	      6873	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+        85	       253	      6773	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+        86	       265	      8327	    0	      0	                                     pbc	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	8313,8327,8347,8520,8528	4,15,6,4,10	0	20	0	1	0	0	0	0	0	0
+        87	       348	    147053	    1	      1	          [Loop@0x23e60 in func@0x23e24]	/lib/x86_64-linux-gnu/libgomp.so.1	147040	17	0	22	0	0	0	0	0	0	0	0
+        88	       242	      6878	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+        89	       242	      6911	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+        90	        53	    367608	    0	      1	                              hack_digit	/lib/x86_64-linux-gnu/libc.so.6	367360	324	0	53	0	0	0	0	0	0	0	0
+        91	        90	    342096	    0	      1	                             __mpn_mul_1	/lib/x86_64-linux-gnu/libc.so.6	342080	281	0	59	0	0	0	0	0	0	0	0
+        92	       362	    147042	    1	      1	          [Loop@0x23e60 in func@0x23e24]	/lib/x86_64-linux-gnu/libgomp.so.1	147040	17	0	22	0	0	0	0	0	0	0	0
+        93	       359	    147502	    1	      1	          [Loop@0x24020 in func@0x23fc4]	/lib/x86_64-linux-gnu/libgomp.so.1	147488	18	0	26	0	0	0	0	0	0	0	0
+        94	       334	    147504	    1	      1	          [Loop@0x24020 in func@0x23fc4]	/lib/x86_64-linux-gnu/libgomp.so.1	147488	18	0	26	0	0	0	0	0	0	0	0
+        95	       253	      6878	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+        96	       348	    147055	    1	      1	          [Loop@0x23e60 in func@0x23e24]	/lib/x86_64-linux-gnu/libgomp.so.1	147040	17	0	22	0	0	0	0	0	0	0	0
+        97	       348	    147049	    1	      1	          [Loop@0x23e60 in func@0x23e24]	/lib/x86_64-linux-gnu/libgomp.so.1	147040	17	0	22	0	0	0	0	0	0	0	0
+        98	       248	      8493	    1	      0	   [Loop at line 194 in velocity_verlet]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	8304	259	8563	18	0	0	0	0	0	0	0	0
+        99	        50	    401673	    0	      1	                         __printf_buffer	/lib/x86_64-linux-gnu/libc.so.6	400768	10051	0	48	0	0	0	0	0	0	0	0
+       100	        99	    367171	    0	      1	                   __printf_buffer_write	/lib/x86_64-linux-gnu/libc.so.6	367152	172	0	60	0	0	0	0	0	0	0	0
+       101	       256	      7000	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+       102	       362	    147055	    1	      1	          [Loop@0x23e60 in func@0x23e24]	/lib/x86_64-linux-gnu/libgomp.so.1	147040	17	0	22	0	0	0	0	0	0	0	0
+       103	        70	      7063	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       104	       380	    145190	    1	      1	          [Loop@0x23720 in func@0x236e4]	/lib/x86_64-linux-gnu/libgomp.so.1	145184	18	0	29	0	0	0	0	0	0	0	0
+       105	       256	      6974	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+       106	       256	      6793	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+       107	       275	      8412	    1	      0	   [Loop at line 194 in velocity_verlet]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	8304	259	8563	18	0	0	0	0	0	0	0	0
+       108	       242	      6837	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+       109	       244	      8662	    1	      0	   [Loop at line 211 in velocity_verlet]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	8608	91	8699	17	0	0	0	0	0	0	0	0
+       110	       275	      8493	    1	      0	   [Loop at line 194 in velocity_verlet]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	8304	259	8563	18	0	0	0	0	0	0	0	0
+       111	        52	    370771	    0	      1	                    __printf_fp_buffer_1	/lib/x86_64-linux-gnu/libc.so.6	367696	8540	0	51	0	0	0	0	0	0	0	0
+       112	       217	    367259	    1	      1	[Loop at line 31 in __printf_buffer_write]	/lib/x86_64-linux-gnu/libc.so.6	367200	79	0	61	0	0	0	0	0	0	0	0
+       113	       219	    366100	    0	      1	                __printf_buffer_do_flush	/lib/x86_64-linux-gnu/libc.so.6	0,165654,365963,365964,366048,366080,366088,366104,366120,366136,366152,366168,366184	0,2,0,41,21,5,13,13,13,13,13,13,16	0	62	0	1	0	0	0	0	0	0
+       114	       113	    366849	    0	      1	           __printf_buffer_flush_to_file	/lib/x86_64-linux-gnu/libc.so.6	366736	300	0	64	0	0	0	0	0	0	0	0
+       115	       114	    563966	    0	      1	                   _IO_new_file_overflow	/lib/x86_64-linux-gnu/libc.so.6	563584	512	0	65	0	0	0	0	0	0	0	0
+       116	       115	    562520	    0	      1	                        _IO_new_do_write	/lib/x86_64-linux-gnu/libc.so.6	562496	38	0	66	0	0	0	0	0	0	0	0
+       117	       116	    558961	    0	      1	                            new_do_write	/lib/x86_64-linux-gnu/libc.so.6	558880	327	0	67	0	0	0	0	0	0	0	0
+       118	       221	    566340	    1	      1	[Loop at line 1176 in _IO_new_file_write]	/lib/x86_64-linux-gnu/libc.so.6	566336	48	0	68	0	0	0	0	0	0	0	0
+       119	       223	   1065231	    0	      1	                                   __GI_	/lib/x86_64-linux-gnu/libc.so.6	1065202,1065288	55,21	0	70	0	1	0	0	0	0	0	0
+       120	        53	    367393	    0	      1	                              hack_digit	/lib/x86_64-linux-gnu/libc.so.6	367360	324	0	53	0	0	0	0	0	0	0	0
+       121	        49	    410988	    0	      1	                     __vfprintf_internal	/lib/x86_64-linux-gnu/libc.so.6	410832	640	0	46	0	0	0	0	0	0	0	0
+       122	       121	    367119	    0	      1	            __printf_buffer_to_file_done	/lib/x86_64-linux-gnu/libc.so.6	367104	38	0	72	0	0	0	0	0	0	0	0
+       123	       122	    366929	    0	      1	           __printf_buffer_flush_to_file	/lib/x86_64-linux-gnu/libc.so.6	366736	300	0	64	0	0	0	0	0	0	0	0
+       124	       225	    566710	    0	      1	                     _IO_new_file_xsputn	/lib/x86_64-linux-gnu/libc.so.6	0,566474,566482,566576,566664,566793,566816	0,0,74,80,125,3,129	0	73	0	1	0	0	0	0	0	0
+       125	       124	    562520	    0	      1	                        _IO_new_do_write	/lib/x86_64-linux-gnu/libc.so.6	562496	38	0	66	0	0	0	0	0	0	0	0
+       126	       125	    558961	    0	      1	                            new_do_write	/lib/x86_64-linux-gnu/libc.so.6	558880	327	0	67	0	0	0	0	0	0	0	0
+       127	       227	    566340	    1	      1	[Loop at line 1176 in _IO_new_file_write]	/lib/x86_64-linux-gnu/libc.so.6	566336	48	0	68	0	0	0	0	0	0	0	0
+       128	       229	   1065231	    0	      1	                                   __GI_	/lib/x86_64-linux-gnu/libc.so.6	1065202,1065288	55,21	0	70	0	1	0	0	0	0	0	0
+       129	        -1	    135040	    0	      1	                            func@0x20f04	/lib/x86_64-linux-gnu/libgomp.so.1	134916	128	0	33	0	0	0	0	0	0	0	0
+       130	        -1	   1116087	    0	      1	                                __clone3	/lib/x86_64-linux-gnu/libc.so.6	1116048	67	0	75	0	0	0	0	0	0	0	0
+       131	       231	    598146	    1	      1	      [Loop at line 447 in start_thread]	/lib/x86_64-linux-gnu/libc.so.6	597582,598079,598215,598332	265,73,104,54	0	76	0	0	0	0	0	0	0	0
+       132	       131	   3621181	    0	      1	       tpss_thread_start_routine_wrapper	/opt/intel/oneapi/advisor/2023.2.0/lib64/libtpsstool.so	3620256	1869	0	41	0	0	0	0	0	0	0	0
+       133	       382	    135385	    1	      1	          [Loop@0x210a0 in func@0x20f84]	/lib/x86_64-linux-gnu/libgomp.so.1	135328	74	0	34	0	0	0	0	0	0	0	0
+       134	       385	    147494	    1	      1	          [Loop@0x24020 in func@0x23fc4]	/lib/x86_64-linux-gnu/libgomp.so.1	147488	18	0	26	0	0	0	0	0	0	0	0
+       135	       382	    135335	    1	      1	          [Loop@0x210a0 in func@0x20f84]	/lib/x86_64-linux-gnu/libgomp.so.1	135328	74	0	34	0	0	0	0	0	0	0	0
+       136	       389	    147046	    1	      1	          [Loop@0x23e60 in func@0x23e24]	/lib/x86_64-linux-gnu/libgomp.so.1	147040	17	0	22	0	0	0	0	0	0	0	0
+       137	       385	    147490	    1	      1	          [Loop@0x24020 in func@0x23fc4]	/lib/x86_64-linux-gnu/libgomp.so.1	147488	18	0	26	0	0	0	0	0	0	0	0
+       138	       385	    147502	    1	      1	          [Loop@0x24020 in func@0x23fc4]	/lib/x86_64-linux-gnu/libgomp.so.1	147488	18	0	26	0	0	0	0	0	0	0	0
+       139	       389	    147042	    1	      1	          [Loop@0x23e60 in func@0x23e24]	/lib/x86_64-linux-gnu/libgomp.so.1	147040	17	0	22	0	0	0	0	0	0	0	0
+       140	       389	    147055	    1	      1	          [Loop@0x23e60 in func@0x23e24]	/lib/x86_64-linux-gnu/libgomp.so.1	147040	17	0	22	0	0	0	0	0	0	0	0
+       141	       385	    147504	    1	      1	          [Loop@0x24020 in func@0x23fc4]	/lib/x86_64-linux-gnu/libgomp.so.1	147488	18	0	26	0	0	0	0	0	0	0	0
+       142	       385	    147497	    1	      1	          [Loop@0x24020 in func@0x23fc4]	/lib/x86_64-linux-gnu/libgomp.so.1	147488	18	0	26	0	0	0	0	0	0	0	0
+       143	       389	    147053	    1	      1	          [Loop@0x23e60 in func@0x23e24]	/lib/x86_64-linux-gnu/libgomp.so.1	147040	17	0	22	0	0	0	0	0	0	0	0
+       144	       389	    147049	    1	      1	          [Loop@0x23e60 in func@0x23e24]	/lib/x86_64-linux-gnu/libgomp.so.1	147040	17	0	22	0	0	0	0	0	0	0	0
+       145	       382	    135373	    1	      1	          [Loop@0x210a0 in func@0x20f84]	/lib/x86_64-linux-gnu/libgomp.so.1	135328	74	0	34	0	0	0	0	0	0	0	0
+       146	       281	      7000	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+       147	       281	      6852	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+       148	       281	      6901	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+       149	       133	    147677	    0	      1	                            func@0x23fc4	/lib/x86_64-linux-gnu/libgomp.so.1	147396	400	0	27	0	0	0	0	0	0	0	0
+       150	       145	      6605	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       151	       150	     97132	    0	      1	                     omp_get_num_threads	/lib/x86_64-linux-gnu/libgomp.so.1	97104	29	0	36	0	0	0	0	0	0	0	0
+       152	       281	      6911	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+       153	       145	      7063	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       154	       401	    145190	    1	      1	          [Loop@0x23720 in func@0x236e4]	/lib/x86_64-linux-gnu/libgomp.so.1	145184	18	0	29	0	0	0	0	0	0	0	0
+       155	       281	      6832	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+       156	       281	      6995	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+       157	       281	      6841	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+       158	       135	    147231	    0	      1	                            func@0x23f10	/lib/x86_64-linux-gnu/libgomp.so.1	147216	52	0	37	0	0	0	0	0	0	0	0
+       159	       281	      6817	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+       160	       281	      6822	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+       161	       281	      6974	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+       162	       281	      6803	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+       163	       281	      6847	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+       164	       281	      6896	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+       165	       401	    145200	    1	      1	          [Loop@0x23720 in func@0x236e4]	/lib/x86_64-linux-gnu/libgomp.so.1	145184	18	0	29	0	0	0	0	0	0	0	0
+       166	       281	      6963	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+       167	       281	      6787	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+       168	       145	      7122	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       169	       168	     56524	    0	      1	                         GOMP_atomic_end	/lib/x86_64-linux-gnu/libgomp.so.1	56512	36	0	38	0	0	0	0	0	0	0	0
+       170	       281	      6773	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+       171	       281	      6936	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+       172	       281	      6811	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+       173	       281	      6873	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+       174	       401	    145197	    1	      1	          [Loop@0x23720 in func@0x236e4]	/lib/x86_64-linux-gnu/libgomp.so.1	145184	18	0	29	0	0	0	0	0	0	0	0
+       175	       281	      6916	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+       176	       281	      6837	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+       177	       281	      7014	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+       178	       281	      6793	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+       179	       281	      7004	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+       180	       281	      7008	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+       181	       382	    135390	    1	      1	          [Loop@0x210a0 in func@0x20f84]	/lib/x86_64-linux-gnu/libgomp.so.1	135328	74	0	34	0	0	0	0	0	0	0	0
+       182	       281	      6952	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+       183	       281	      6878	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+       184	       281	      6990	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+       185	       281	      6860	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+       186	       281	      6782	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+       187	       281	      6777	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+       188	       281	      6947	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+       189	       401	    145186	    1	      1	          [Loop@0x23720 in func@0x236e4]	/lib/x86_64-linux-gnu/libgomp.so.1	145184	18	0	29	0	0	0	0	0	0	0	0
+       190	       281	      6827	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+       191	       281	      6891	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+       192	       316	      7077	    1	      0	  [Loop at line 130 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	7072	29	7101	21	0	0	0	0	0	0	0	0
+       193	       316	      7089	    1	      0	  [Loop at line 130 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	7072	29	7101	21	0	0	0	0	0	0	0	0
+       194	       281	      6886	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+       195	       145	      7050	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       196	       153	     56483	    0	      1	                       GOMP_atomic_start	/lib/x86_64-linux-gnu/libgomp.so.1	56464	36	0	39	0	0	0	0	0	0	0	0
+       197	       281	      6920	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+       198	       316	      7084	    1	      0	  [Loop at line 130 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	7072	29	7101	21	0	0	0	0	0	0	0	0
+       199	       382	    135363	    1	      1	          [Loop@0x210a0 in func@0x20f84]	/lib/x86_64-linux-gnu/libgomp.so.1	135328	74	0	34	0	0	0	0	0	0	0	0
+       200	       133	    147855	    0	      1	                            func@0x24184	/lib/x86_64-linux-gnu/libgomp.so.1	147844	32	0	40	0	0	0	0	0	0	0	0
+       201	       281	      6931	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6768	252	7020	15	0	0	0	0	0	0	0	0
+       202	       145	      6565	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       203	       145	      6600	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       204	       233	   1464275	    1	      1	[Loop at line 291 in __memset_avx2_unaligned_erms]	/lib/x86_64-linux-gnu/libc.so.6	1464256	28	0	58	0	0	0	0	0	0	0	0
+       205	         2	    171526	    0	      1	                  __libc_start_main_impl	/lib/x86_64-linux-gnu/libc.so.6	171424	324	0	43	0	0	0	0	0	0	0	0
+       206	         2	    171556	    0	      1	                  __libc_start_main_impl	/lib/x86_64-linux-gnu/libc.so.6	171424	324	0	43	0	0	0	0	0	0	0	0
+       207	        50	    401566	    0	      1	                         __printf_buffer	/lib/x86_64-linux-gnu/libc.so.6	400768	10051	0	48	0	0	0	0	0	0	0	0
+       208	        50	    406716	    0	      1	                         __printf_buffer	/lib/x86_64-linux-gnu/libc.so.6	400768	10051	0	48	0	0	0	0	0	0	0	0
+       209	        52	    369861	    0	      1	                    __printf_fp_buffer_1	/lib/x86_64-linux-gnu/libc.so.6	367696	8540	0	51	0	0	0	0	0	0	0	0
+       210	       209	    369875	    1	      1	[Loop at line 790 in __printf_fp_buffer_1]	/lib/x86_64-linux-gnu/libc.so.6	369861	76	0	52	0	0	0	0	0	0	0	0
+       211	        52	    369894	    0	      1	                    __printf_fp_buffer_1	/lib/x86_64-linux-gnu/libc.so.6	367696	8540	0	51	0	0	0	0	0	0	0	0
+       212	        52	    369906	    0	      1	                    __printf_fp_buffer_1	/lib/x86_64-linux-gnu/libc.so.6	367696	8540	0	51	0	0	0	0	0	0	0	0
+       213	        50	    401636	    0	      1	                         __printf_buffer	/lib/x86_64-linux-gnu/libc.so.6	400768	10051	0	48	0	0	0	0	0	0	0	0
+       214	        50	    401653	    0	      1	                         __printf_buffer	/lib/x86_64-linux-gnu/libc.so.6	400768	10051	0	48	0	0	0	0	0	0	0	0
+       215	        81	   1464256	    0	      1	            __memset_avx2_unaligned_erms	/lib/x86_64-linux-gnu/libc.so.6	1464128	390	0	56	0	0	0	0	0	0	0	0
+       216	        81	   1464260	    0	      1	            __memset_avx2_unaligned_erms	/lib/x86_64-linux-gnu/libc.so.6	1464128	390	0	56	0	0	0	0	0	0	0	0
+       217	       111	    367200	    0	      1	                   __printf_buffer_write	/lib/x86_64-linux-gnu/libc.so.6	367152	172	0	60	0	0	0	0	0	0	0	0
+       218	       111	    367259	    0	      1	                   __printf_buffer_write	/lib/x86_64-linux-gnu/libc.so.6	367152	172	0	60	0	0	0	0	0	0	0	0
+       219	       112	    165654	    0	      1	                   __printf_buffer_flush	/lib/x86_64-linux-gnu/libc.so.6	365952	282	0	63	0	0	0	0	0	0	0	0
+       220	       112	    366100	    0	      1	                   __printf_buffer_flush	/lib/x86_64-linux-gnu/libc.so.6	365952	282	0	63	0	0	0	0	0	0	0	0
+       221	       117	    566336	    0	      1	                      _IO_new_file_write	/lib/x86_64-linux-gnu/libc.so.6	566304	140	0	69	0	0	0	0	0	0	0	0
+       222	       117	    566340	    0	      1	                      _IO_new_file_write	/lib/x86_64-linux-gnu/libc.so.6	566304	140	0	69	0	0	0	0	0	0	0	0
+       223	       118	   1065202	    0	      1	                                   __GI_	/lib/x86_64-linux-gnu/libc.so.6	1065152	157	0	71	0	0	0	0	0	0	0	0
+       224	       118	   1065231	    0	      1	                                   __GI_	/lib/x86_64-linux-gnu/libc.so.6	1065152	157	0	71	0	0	0	0	0	0	0	0
+       225	       123	    566474	    0	      1	                     _IO_new_file_xsputn	/lib/x86_64-linux-gnu/libc.so.6	566448	497	0	74	0	0	0	0	0	0	0	0
+       226	       123	    566710	    0	      1	                     _IO_new_file_xsputn	/lib/x86_64-linux-gnu/libc.so.6	566448	497	0	74	0	0	0	0	0	0	0	0
+       227	       126	    566336	    0	      1	                      _IO_new_file_write	/lib/x86_64-linux-gnu/libc.so.6	566304	140	0	69	0	0	0	0	0	0	0	0
+       228	       126	    566340	    0	      1	                      _IO_new_file_write	/lib/x86_64-linux-gnu/libc.so.6	566304	140	0	69	0	0	0	0	0	0	0	0
+       229	       127	   1065202	    0	      1	                                   __GI_	/lib/x86_64-linux-gnu/libc.so.6	1065152	157	0	71	0	0	0	0	0	0	0	0
+       230	       127	   1065231	    0	      1	                                   __GI_	/lib/x86_64-linux-gnu/libc.so.6	1065152	157	0	71	0	0	0	0	0	0	0	0
+       231	       130	    597582	    0	      1	                            start_thread	/lib/x86_64-linux-gnu/libc.so.6	597264	1153	0	77	0	0	0	0	0	0	0	0
+       232	       130	    598146	    0	      1	                            start_thread	/lib/x86_64-linux-gnu/libc.so.6	597264	1153	0	77	0	0	0	0	0	0	0	0
+       233	       203	   1464256	    0	      1	            __memset_avx2_unaligned_erms	/lib/x86_64-linux-gnu/libc.so.6	1464128	390	0	56	0	0	0	0	0	0	0	0
+       234	       203	   1464275	    0	      1	            __memset_avx2_unaligned_erms	/lib/x86_64-linux-gnu/libc.so.6	1464128	390	0	56	0	0	0	0	0	0	0	0
+       235	         4	      4904	    0	      0	                                    main	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	4480	1764	0	9	0	0	0	0	0	0	0	0
+       236	         4	      5102	    0	      0	                                    main	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	4480	1764	0	9	0	0	0	0	0	0	0	0
+       237	       235	      5125	    1	      0	               [Loop at line 45 in main]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	4904,6178	1103,66	6007	8	0	0	0	0	0	0	0	0
+       238	         4	      5197	    0	      0	                                    main	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	4480	1764	0	9	0	0	0	0	0	0	0	0
+       239	       235	      5357	    1	      0	               [Loop at line 45 in main]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	4904,6178	1103,66	6007	8	0	0	0	0	0	0	0	0
+       240	         4	      5440	    0	      0	                                    main	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	4480	1764	0	9	0	0	0	0	0	0	0	0
+       241	        39	      6736	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       242	       241	      6768	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6736	305	7041	16	0	0	0	0	0	0	0	0
+       243	        39	      7000	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       244	        26	      8608	    0	      0	                         velocity_verlet	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	8224	509	0	12	0	0	0	0	0	0	0	0
+       245	        26	      8614	    0	      0	                         velocity_verlet	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	8224	509	0	12	0	0	0	0	0	0	0	0
+       246	        39	      6822	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       247	        39	      6901	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       248	        26	      8304	    0	      0	                         velocity_verlet	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	8224	509	0	12	0	0	0	0	0	0	0	0
+       249	        26	      8412	    0	      0	                         velocity_verlet	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	8224	509	0	12	0	0	0	0	0	0	0	0
+       250	       239	      5952	    1	      0	               [Loop at line 75 in main]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	5357,5787,6204	232,220,40	5589	13	0	0	0	0	0	0	0	0
+       251	         4	      5989	    0	      0	                                    main	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	4480	1764	0	9	0	0	0	0	0	0	0	0
+       252	        59	      6736	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       253	       252	      6768	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6736	305	7041	16	0	0	0	0	0	0	0	0
+       254	        59	      6793	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       255	        70	      6736	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       256	       255	      6768	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6736	305	7041	16	0	0	0	0	0	0	0	0
+       257	        70	      6911	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       258	        70	      6782	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       259	        70	      6936	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       260	        70	      6852	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       261	        59	      6847	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       262	        39	      6873	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       263	        59	      6773	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       264	        26	      8304	    0	      0	                         velocity_verlet	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	8224	509	0	12	0	0	0	0	0	0	0	0
+       265	       264	      8313	    1	      0	   [Loop at line 194 in velocity_verlet]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	8304	259	8563	18	0	0	0	0	0	0	0	0
+       266	       264	      8327	    1	      0	   [Loop at line 194 in velocity_verlet]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	8304	259	8563	18	0	0	0	0	0	0	0	0
+       267	        26	      8327	    0	      0	                         velocity_verlet	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	8224	509	0	12	0	0	0	0	0	0	0	0
+       268	        39	      6878	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       269	        39	      6911	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       270	        59	      6878	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       271	        26	      8493	    0	      0	                         velocity_verlet	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	8224	509	0	12	0	0	0	0	0	0	0	0
+       272	        70	      7000	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       273	        70	      6974	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       274	        70	      6793	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       275	        11	      8304	    0	      0	                         velocity_verlet	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	8224	509	0	12	0	0	0	0	0	0	0	0
+       276	        11	      8412	    0	      0	                         velocity_verlet	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	8224	509	0	12	0	0	0	0	0	0	0	0
+       277	        39	      6837	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       278	        26	      8662	    0	      0	                         velocity_verlet	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	8224	509	0	12	0	0	0	0	0	0	0	0
+       279	        11	      8493	    0	      0	                         velocity_verlet	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	8224	509	0	12	0	0	0	0	0	0	0	0
+       280	       145	      6736	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       281	       280	      6768	    1	      0	  [Loop at line 136 in forces._omp_fn.0]	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6736	305	7041	16	0	0	0	0	0	0	0	0
+       282	       145	      7000	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       283	       145	      6852	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       284	       145	      6901	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       285	       145	      6911	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       286	       145	      6832	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       287	       145	      6995	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       288	       145	      6841	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       289	       145	      6817	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       290	       145	      6822	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       291	       145	      6974	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       292	       145	      6803	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       293	       145	      6847	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       294	       145	      6896	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       295	       145	      6963	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       296	       145	      6787	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       297	       145	      6773	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       298	       145	      6936	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       299	       145	      6811	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       300	       145	      6873	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       301	       145	      6916	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       302	       145	      6837	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       303	       145	      7014	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       304	       145	      6793	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       305	       145	      7004	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       306	       145	      7008	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       307	       145	      6952	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       308	       145	      6878	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       309	       145	      6990	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       310	       145	      6860	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       311	       145	      6782	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       312	       145	      6777	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       313	       145	      6947	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       314	       145	      6827	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       315	       145	      6891	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       316	       145	      7072	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       317	       145	      7077	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       318	       145	      7089	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       319	       145	      6886	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       320	       145	      6920	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       321	       145	      7084	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       322	       145	      6931	    0	      0	                        forces._omp_fn.0	/users/cp2025/cp2025_093/lab3/lab1/tiny_md	6528	628	0	14	0	0	0	0	0	0	0	0
+       323	         7	    136564	    0	      1	                            func@0x21314	/lib/x86_64-linux-gnu/libgomp.so.1	135956	5916	0	4	0	0	0	0	0	0	0	0
+       324	       323	    136636	    1	      1	          [Loop@0x21574 in func@0x21314]	/lib/x86_64-linux-gnu/libgomp.so.1	136564,136744,137399,137488,138077,138120,138200,138280,138384,138816,138896,138944,139008,139064,139197,139512,139680,139789,139918,139973,140080,140307,140346,140989,141024,141300,141422,141606,141764	173,398,80,473,37,77,30,102,427,74,46,43,52,74,44,50,78,78,42,104,67,32,402,34,67,39,110,52,20	0	6	0	0	0	0	0	0	0	0
+       325	       324	    136744	    1	      1	          [Loop@0x215bc in func@0x21314]	/lib/x86_64-linux-gnu/libgomp.so.1	136636,136744,137399,137488,138077,138120,138200,138280,138384,138816,138896,138944,139008,139064,139197,139512,139680,139789,139918,139973,140080,140346,140989,141024,141300,141422,141606,141764	101,398,80,473,37,77,30,102,427,74,46,43,52,74,44,50,78,78,42,104,67,402,34,67,39,110,52,20	0	5	0	0	0	0	0	0	0	0
+       326	         7	    136966	    0	      1	                            func@0x21314	/lib/x86_64-linux-gnu/libgomp.so.1	135956	5916	0	4	0	0	0	0	0	0	0	0
+       327	         9	    147008	    0	      1	                            func@0x23e24	/lib/x86_64-linux-gnu/libgomp.so.1	146980	236	0	23	0	0	0	0	0	0	0	0
+       328	       327	    147040	    1	      1	          [Loop@0x23e40 in func@0x23e24]	/lib/x86_64-linux-gnu/libgomp.so.1	147008,147072,147136	55,60,9	0	24	0	0	0	0	0	0	0	0
+       329	         9	    147046	    0	      1	                            func@0x23e24	/lib/x86_64-linux-gnu/libgomp.so.1	146980	236	0	23	0	0	0	0	0	0	0	0
+       330	        15	    147008	    0	      1	                            func@0x23e24	/lib/x86_64-linux-gnu/libgomp.so.1	146980	236	0	23	0	0	0	0	0	0	0	0
+       331	       330	    147040	    1	      1	          [Loop@0x23e40 in func@0x23e24]	/lib/x86_64-linux-gnu/libgomp.so.1	147008,147072,147136	55,60,9	0	24	0	0	0	0	0	0	0	0
+       332	        15	    147042	    0	      1	                            func@0x23e24	/lib/x86_64-linux-gnu/libgomp.so.1	146980	236	0	23	0	0	0	0	0	0	0	0
+       333	        17	    147440	    0	      1	                            func@0x23fc4	/lib/x86_64-linux-gnu/libgomp.so.1	147396	400	0	27	0	0	0	0	0	0	0	0
+       334	       333	    147488	    1	      1	          [Loop@0x23ff0 in func@0x23fc4]	/lib/x86_64-linux-gnu/libgomp.so.1	147440,147488,147536,147632	36,37,93,12	0	28	0	0	0	0	0	0	0	0
+       335	        17	    147494	    0	      1	                            func@0x23fc4	/lib/x86_64-linux-gnu/libgomp.so.1	147396	400	0	27	0	0	0	0	0	0	0	0
+       336	        15	    147053	    0	      1	                            func@0x23e24	/lib/x86_64-linux-gnu/libgomp.so.1	146980	236	0	23	0	0	0	0	0	0	0	0
+       337	        15	    147046	    0	      1	                            func@0x23e24	/lib/x86_64-linux-gnu/libgomp.so.1	146980	236	0	23	0	0	0	0	0	0	0	0
+       338	        15	    147055	    0	      1	                            func@0x23e24	/lib/x86_64-linux-gnu/libgomp.so.1	146980	236	0	23	0	0	0	0	0	0	0	0
+       339	        17	    147490	    0	      1	                            func@0x23fc4	/lib/x86_64-linux-gnu/libgomp.so.1	147396	400	0	27	0	0	0	0	0	0	0	0
+       340	        15	    147049	    0	      1	                            func@0x23e24	/lib/x86_64-linux-gnu/libgomp.so.1	146980	236	0	23	0	0	0	0	0	0	0	0
+       341	        17	    147502	    0	      1	                            func@0x23fc4	/lib/x86_64-linux-gnu/libgomp.so.1	147396	400	0	27	0	0	0	0	0	0	0	0
+       342	        17	    147497	    0	      1	                            func@0x23fc4	/lib/x86_64-linux-gnu/libgomp.so.1	147396	400	0	27	0	0	0	0	0	0	0	0
+       343	        29	    147440	    0	      1	                            func@0x23fc4	/lib/x86_64-linux-gnu/libgomp.so.1	147396	400	0	27	0	0	0	0	0	0	0	0
+       344	       343	    147488	    1	      1	          [Loop@0x23ff0 in func@0x23fc4]	/lib/x86_64-linux-gnu/libgomp.so.1	147440,147488,147536,147632	36,37,93,12	0	28	0	0	0	0	0	0	0	0
+       345	        29	    147494	    0	      1	                            func@0x23fc4	/lib/x86_64-linux-gnu/libgomp.so.1	147396	400	0	27	0	0	0	0	0	0	0	0
+       346	        29	    147502	    0	      1	                            func@0x23fc4	/lib/x86_64-linux-gnu/libgomp.so.1	147396	400	0	27	0	0	0	0	0	0	0	0
+       347	        33	    147008	    0	      1	                            func@0x23e24	/lib/x86_64-linux-gnu/libgomp.so.1	146980	236	0	23	0	0	0	0	0	0	0	0
+       348	       347	    147040	    1	      1	          [Loop@0x23e40 in func@0x23e24]	/lib/x86_64-linux-gnu/libgomp.so.1	147008,147072,147136	55,60,9	0	24	0	0	0	0	0	0	0	0
+       349	        33	    147046	    0	      1	                            func@0x23e24	/lib/x86_64-linux-gnu/libgomp.so.1	146980	236	0	23	0	0	0	0	0	0	0	0
+       350	        33	    147042	    0	      1	                            func@0x23e24	/lib/x86_64-linux-gnu/libgomp.so.1	146980	236	0	23	0	0	0	0	0	0	0	0
+       351	        29	    147490	    0	      1	                            func@0x23fc4	/lib/x86_64-linux-gnu/libgomp.so.1	147396	400	0	27	0	0	0	0	0	0	0	0
+       352	        29	    147497	    0	      1	                            func@0x23fc4	/lib/x86_64-linux-gnu/libgomp.so.1	147396	400	0	27	0	0	0	0	0	0	0	0
+       353	        29	    147504	    0	      1	                            func@0x23fc4	/lib/x86_64-linux-gnu/libgomp.so.1	147396	400	0	27	0	0	0	0	0	0	0	0
+       354	        40	    145126	    0	      1	                            func@0x236e4	/lib/x86_64-linux-gnu/libgomp.so.1	145124	364	0	30	0	0	0	0	0	0	0	0
+       355	       354	    145184	    1	      1	          [Loop@0x236e6 in func@0x236e4]	/lib/x86_64-linux-gnu/libgomp.so.1	145126,145184,145464	45,31,12	0	31	0	0	0	0	0	0	0	0
+       356	        40	    145190	    0	      1	                            func@0x236e4	/lib/x86_64-linux-gnu/libgomp.so.1	145124	364	0	30	0	0	0	0	0	0	0	0
+       357	        40	    145186	    0	      1	                            func@0x236e4	/lib/x86_64-linux-gnu/libgomp.so.1	145124	364	0	30	0	0	0	0	0	0	0	0
+       358	        57	    147440	    0	      1	                            func@0x23fc4	/lib/x86_64-linux-gnu/libgomp.so.1	147396	400	0	27	0	0	0	0	0	0	0	0
+       359	       358	    147488	    1	      1	          [Loop@0x23ff0 in func@0x23fc4]	/lib/x86_64-linux-gnu/libgomp.so.1	147440,147488,147536,147632	36,37,93,12	0	28	0	0	0	0	0	0	0	0
+       360	        57	    147504	    0	      1	                            func@0x23fc4	/lib/x86_64-linux-gnu/libgomp.so.1	147396	400	0	27	0	0	0	0	0	0	0	0
+       361	        63	    147008	    0	      1	                            func@0x23e24	/lib/x86_64-linux-gnu/libgomp.so.1	146980	236	0	23	0	0	0	0	0	0	0	0
+       362	       361	    147040	    1	      1	          [Loop@0x23e40 in func@0x23e24]	/lib/x86_64-linux-gnu/libgomp.so.1	147008,147072,147136	55,60,9	0	24	0	0	0	0	0	0	0	0
+       363	        63	    147046	    0	      1	                            func@0x23e24	/lib/x86_64-linux-gnu/libgomp.so.1	146980	236	0	23	0	0	0	0	0	0	0	0
+       364	        57	    147494	    0	      1	                            func@0x23fc4	/lib/x86_64-linux-gnu/libgomp.so.1	147396	400	0	27	0	0	0	0	0	0	0	0
+       365	        57	    147490	    0	      1	                            func@0x23fc4	/lib/x86_64-linux-gnu/libgomp.so.1	147396	400	0	27	0	0	0	0	0	0	0	0
+       366	        57	    147497	    0	      1	                            func@0x23fc4	/lib/x86_64-linux-gnu/libgomp.so.1	147396	400	0	27	0	0	0	0	0	0	0	0
+       367	        63	    147053	    0	      1	                            func@0x23e24	/lib/x86_64-linux-gnu/libgomp.so.1	146980	236	0	23	0	0	0	0	0	0	0	0
+       368	        62	    136564	    0	      1	                            func@0x21314	/lib/x86_64-linux-gnu/libgomp.so.1	135956	5916	0	4	0	0	0	0	0	0	0	0
+       369	       368	    136636	    1	      1	          [Loop@0x21574 in func@0x21314]	/lib/x86_64-linux-gnu/libgomp.so.1	136564,136744,137399,137488,138077,138120,138200,138280,138384,138816,138896,138944,139008,139064,139197,139512,139680,139789,139918,139973,140080,140307,140346,140989,141024,141300,141422,141606,141764	173,398,80,473,37,77,30,102,427,74,46,43,52,74,44,50,78,78,42,104,67,32,402,34,67,39,110,52,20	0	6	0	0	0	0	0	0	0	0
+       370	       369	    137488	    1	      1	          [Loop@0x215bc in func@0x21314]	/lib/x86_64-linux-gnu/libgomp.so.1	136636,136744,137399,137488,138077,138120,138200,138280,138384,138816,138896,138944,139008,139064,139197,139512,139680,139789,139918,139973,140080,140346,140989,141024,141300,141422,141606,141764	101,398,80,473,37,77,30,102,427,74,46,43,52,74,44,50,78,78,42,104,67,402,34,67,39,110,52,20	0	5	0	0	0	0	0	0	0	0
+       371	        62	    137723	    0	      1	                            func@0x21314	/lib/x86_64-linux-gnu/libgomp.so.1	135956	5916	0	4	0	0	0	0	0	0	0	0
+       372	        33	    147053	    0	      1	                            func@0x23e24	/lib/x86_64-linux-gnu/libgomp.so.1	146980	236	0	23	0	0	0	0	0	0	0	0
+       373	        63	    147042	    0	      1	                            func@0x23e24	/lib/x86_64-linux-gnu/libgomp.so.1	146980	236	0	23	0	0	0	0	0	0	0	0
+       374	        57	    147502	    0	      1	                            func@0x23fc4	/lib/x86_64-linux-gnu/libgomp.so.1	147396	400	0	27	0	0	0	0	0	0	0	0
+       375	        17	    147504	    0	      1	                            func@0x23fc4	/lib/x86_64-linux-gnu/libgomp.so.1	147396	400	0	27	0	0	0	0	0	0	0	0
+       376	        33	    147055	    0	      1	                            func@0x23e24	/lib/x86_64-linux-gnu/libgomp.so.1	146980	236	0	23	0	0	0	0	0	0	0	0
+       377	        33	    147049	    0	      1	                            func@0x23e24	/lib/x86_64-linux-gnu/libgomp.so.1	146980	236	0	23	0	0	0	0	0	0	0	0
+       378	        63	    147055	    0	      1	                            func@0x23e24	/lib/x86_64-linux-gnu/libgomp.so.1	146980	236	0	23	0	0	0	0	0	0	0	0
+       379	       103	    145126	    0	      1	                            func@0x236e4	/lib/x86_64-linux-gnu/libgomp.so.1	145124	364	0	30	0	0	0	0	0	0	0	0
+       380	       379	    145184	    1	      1	          [Loop@0x236e6 in func@0x236e4]	/lib/x86_64-linux-gnu/libgomp.so.1	145126,145184,145464	45,31,12	0	31	0	0	0	0	0	0	0	0
+       381	       103	    145190	    0	      1	                            func@0x236e4	/lib/x86_64-linux-gnu/libgomp.so.1	145124	364	0	30	0	0	0	0	0	0	0	0
+       382	       132	    135328	    0	      1	                            func@0x20f84	/lib/x86_64-linux-gnu/libgomp.so.1	135044	380	0	35	0	0	0	0	0	0	0	0
+       383	       132	    135385	    0	      1	                            func@0x20f84	/lib/x86_64-linux-gnu/libgomp.so.1	135044	380	0	35	0	0	0	0	0	0	0	0
+       384	       133	    147440	    0	      1	                            func@0x23fc4	/lib/x86_64-linux-gnu/libgomp.so.1	147396	400	0	27	0	0	0	0	0	0	0	0
+       385	       384	    147488	    1	      1	          [Loop@0x23ff0 in func@0x23fc4]	/lib/x86_64-linux-gnu/libgomp.so.1	147440,147488,147536,147632	36,37,93,12	0	28	0	0	0	0	0	0	0	0
+       386	       133	    147494	    0	      1	                            func@0x23fc4	/lib/x86_64-linux-gnu/libgomp.so.1	147396	400	0	27	0	0	0	0	0	0	0	0
+       387	       132	    135335	    0	      1	                            func@0x20f84	/lib/x86_64-linux-gnu/libgomp.so.1	135044	380	0	35	0	0	0	0	0	0	0	0
+       388	       135	    147008	    0	      1	                            func@0x23e24	/lib/x86_64-linux-gnu/libgomp.so.1	146980	236	0	23	0	0	0	0	0	0	0	0
+       389	       388	    147040	    1	      1	          [Loop@0x23e40 in func@0x23e24]	/lib/x86_64-linux-gnu/libgomp.so.1	147008,147072,147136	55,60,9	0	24	0	0	0	0	0	0	0	0
+       390	       135	    147046	    0	      1	                            func@0x23e24	/lib/x86_64-linux-gnu/libgomp.so.1	146980	236	0	23	0	0	0	0	0	0	0	0
+       391	       133	    147490	    0	      1	                            func@0x23fc4	/lib/x86_64-linux-gnu/libgomp.so.1	147396	400	0	27	0	0	0	0	0	0	0	0
+       392	       133	    147502	    0	      1	                            func@0x23fc4	/lib/x86_64-linux-gnu/libgomp.so.1	147396	400	0	27	0	0	0	0	0	0	0	0
+       393	       135	    147042	    0	      1	                            func@0x23e24	/lib/x86_64-linux-gnu/libgomp.so.1	146980	236	0	23	0	0	0	0	0	0	0	0
+       394	       135	    147055	    0	      1	                            func@0x23e24	/lib/x86_64-linux-gnu/libgomp.so.1	146980	236	0	23	0	0	0	0	0	0	0	0
+       395	       133	    147504	    0	      1	                            func@0x23fc4	/lib/x86_64-linux-gnu/libgomp.so.1	147396	400	0	27	0	0	0	0	0	0	0	0
+       396	       133	    147497	    0	      1	                            func@0x23fc4	/lib/x86_64-linux-gnu/libgomp.so.1	147396	400	0	27	0	0	0	0	0	0	0	0
+       397	       135	    147053	    0	      1	                            func@0x23e24	/lib/x86_64-linux-gnu/libgomp.so.1	146980	236	0	23	0	0	0	0	0	0	0	0
+       398	       135	    147049	    0	      1	                            func@0x23e24	/lib/x86_64-linux-gnu/libgomp.so.1	146980	236	0	23	0	0	0	0	0	0	0	0
+       399	       132	    135373	    0	      1	                            func@0x20f84	/lib/x86_64-linux-gnu/libgomp.so.1	135044	380	0	35	0	0	0	0	0	0	0	0
+       400	       153	    145126	    0	      1	                            func@0x236e4	/lib/x86_64-linux-gnu/libgomp.so.1	145124	364	0	30	0	0	0	0	0	0	0	0
+       401	       400	    145184	    1	      1	          [Loop@0x236e6 in func@0x236e4]	/lib/x86_64-linux-gnu/libgomp.so.1	145126,145184,145464	45,31,12	0	31	0	0	0	0	0	0	0	0
+       402	       153	    145190	    0	      1	                            func@0x236e4	/lib/x86_64-linux-gnu/libgomp.so.1	145124	364	0	30	0	0	0	0	0	0	0	0
+       403	       153	    145200	    0	      1	                            func@0x236e4	/lib/x86_64-linux-gnu/libgomp.so.1	145124	364	0	30	0	0	0	0	0	0	0	0
+       404	       153	    145197	    0	      1	                            func@0x236e4	/lib/x86_64-linux-gnu/libgomp.so.1	145124	364	0	30	0	0	0	0	0	0	0	0
+       405	       132	    135390	    0	      1	                            func@0x20f84	/lib/x86_64-linux-gnu/libgomp.so.1	135044	380	0	35	0	0	0	0	0	0	0	0
+       406	       153	    145186	    0	      1	                            func@0x236e4	/lib/x86_64-linux-gnu/libgomp.so.1	145124	364	0	30	0	0	0	0	0	0	0	0
+       407	       132	    135363	    0	      1	                            func@0x20f84	/lib/x86_64-linux-gnu/libgomp.so.1	135044	380	0	35	0	0	0	0	0	0	0	0
+       408	        -1	         0	    0	      0	                      [Outside any loop]	n/a	0	0	0	78	0	0	0	0	0	0	0	0

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- <!DOCTYPE IntelParallelAdvisorSummaryCollection SYSTEM  "IntelParallelAdvisorSummaryCollection.dtd"> -->
+
+<IntelParallelAdvisorSummary version="" 
+                             kind="DATAKIND_SURVEY_EX" >
+  <hotspot filename="/users/cp2025/cp2025_093/lab3/lab1/core.c"
+           line_no="136"
+           routine="forces._omp_fn.0"
+           is_vectorized="1"
+           self_time="4.633405E+01"
+           total_time="4.633405E+01"
+           trip_counts=""
+           func_instance="12"
+           priority="0"/>
+  <hotspot filename="/users/cp2025/cp2025_093/lab3/lab1/core.c"
+           line_no="194"
+           routine="velocity_verlet"
+           is_vectorized="0"
+           self_time="2.641138E-01"
+           total_time="3.281122E-01"
+           trip_counts=""
+           func_instance="18"
+           priority="0"/>
+  <hotspot filename="/users/cp2025/cp2025_093/lab3/lab1/core.c"
+           line_no="130"
+           routine="forces._omp_fn.0"
+           is_vectorized="1"
+           self_time="1.299659E-01"
+           total_time="1.299659E-01"
+           trip_counts=""
+           func_instance="25"
+           priority="0"/>
+  <hotspot filename="/users/cp2025/cp2025_093/lab3/lab1/core.c"
+           line_no="211"
+           routine="velocity_verlet"
+           is_vectorized="0"
+           self_time="1.072078E-01"
+           total_time="1.072078E-01"
+           trip_counts=""
+           func_instance="19"
+           priority="0"/>
+  <hotspot filename="/users/cp2025/cp2025_093/lab3/lab1/core.c"
+           line_no="136"
+           routine="forces._omp_fn.0"
+           is_vectorized="0"
+           self_time="1.609386E-02"
+           total_time="4.635014E+01"
+           trip_counts=""
+           func_instance="14"
+           priority="0"/>
+</IntelParallelAdvisorSummary >

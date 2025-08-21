@@ -24,7 +24,7 @@ def lab0vslab1():
 def lab2():
 
     df_cache = df[df['block'] == 0]
-    plt.plot(df_cache[xaxis], df_cache[yaxis], color='red', label="rxyz y fxyz mixed")
+    #plt.plot(df_cache[xaxis], df_cache[yaxis], color='red', label="rxyz y fxyz mixed")
 
     df_split = df[df['block'] == 1]
     plt.plot(df_split[xaxis], df_split[yaxis], color='blue', label="Pre-calculo forces")
@@ -33,7 +33,7 @@ def lab2():
     plt.plot(df_lab1[xaxis], df_lab1[yaxis], color='green', label="Lab1")
 
     df_lab0 = df[df['block'] == 3]
-    plt.plot(df_lab0[xaxis], df_lab0[yaxis], color='orange', label="Tiny_md")
+    #plt.plot(df_lab0[xaxis], df_lab0[yaxis], color='orange', label="Tiny_md")
 
     plt.title("Tiempo de ejecucion")
     plt.legend()
@@ -42,13 +42,13 @@ def lab2():
     plt.show()
 
 
-    plt.plot(df_cache[xaxis], df_cache[yaxis2], color='red', label="rxyz y fxyz mixed")
+    #plt.plot(df_cache[xaxis], df_cache[yaxis2], color='red', label="rxyz y fxyz mixed")
 
     plt.plot(df_split[xaxis], df_split[yaxis2], color='blue', label="Pre-calculo forces")
 
     plt.plot(df_lab1[xaxis], df_lab1[yaxis2], color='green', label="Lab1")
 
-    plt.plot(df_lab0[xaxis], df_lab0[yaxis2], color='orange', label="Tiny_md")
+    #plt.plot(df_lab0[xaxis], df_lab0[yaxis2], color='orange', label="Tiny_md")
 
     plt.title("FLOPS/IPS")
     plt.legend()
@@ -56,4 +56,4 @@ def lab2():
     plt.ylabel("FLOPS/IPS")
     plt.show()
 
-lab0vslab1()
+lab2()
